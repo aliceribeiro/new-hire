@@ -1,0 +1,29 @@
+<app-topbar></app-topbar>
+<div class="d-flex justify-content-around">
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+  <div style="width: 75%;">
+    <table class="table container table-hover table-sm mt-5">
+      <tbody *ngIf="database$ | async as database" class="shadow p-3 mb-5 bg-body rounded">
+        <tr *ngFor="let item of database.results">
+          <td><img [src]="item.picture.thumbnail" class="rounded-circle ml-3 pt-2 pb-2" alt="Foto do candidato"></td>
+          <th class="align-middle">{{ item.name.first }}</th>
+          <td class="align-middle">{{ item.email }}</td>
+          <td class="align-middle">{{ item.cell }}</td>
+          <td class="align-middle">{{ item.location.city }} - {{ item.location.state }}</td>
+          <td class="align-middle">
+            <a href="#">
+              <i class="bi bi-trash-fill" style="color: #ABABAB; font-size: 1.2rem;"></i>
+            </a>
+          </td>
+          <td class="align-middle">
+            <a href="#">
+              <i class="bi bi-check2" style="color: #ABABAB; font-size: 1.5rem;"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
