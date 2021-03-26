@@ -1,2 +1,31 @@
 <app-topbar></app-topbar>
-<app-sidebar></app-sidebar>
+
+<div class="d-flex justify-content-around">
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+  <div style="width: 75%;">
+    <table class="table container table-sm mt-5">
+      <tbody *ngIf="candidates" class="shadow p-3 mb-5 bg-body rounded">
+        <tr *ngFor="let item of candidates">
+          <td><img [src]="item.picture.thumbnail" class="rounded-circle ml-3 pt-2 pb-2" alt="Foto do candidato"></td>
+          <th [routerLink]="['/candidate-info', item.login.uuid]"class="align-middle user-select-none">{{ item.name.first }}</th>
+          <td class="align-middle">{{ item.email }}</td>
+          <td class="align-middle">{{ item.cell }}</td>
+          <td class="align-middle">{{ item.location.city }} - {{ item.location.state }}</td>
+          <td class="align-middle">
+            <button (click)="moveFromTrashToAll(item.login.uuid)" style="border: none; background-color: #FFF;">
+              <i class="bi bi-list" style="color: #ABABAB; font-size: 1.2rem;"></i>
+            </button>
+          </td>
+          <td class="align-middle">
+            <button href="#" style="border: none; background-color: #FFF;">
+              <i class="bi bi-check2" style="color: #ABABAB; font-size: 1.5rem;"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
