@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'checked', component: CheckedComponent},
   {path: 'trash', component: TrashComponent},
-  {path: 'candidate-info', component: CandidateInfoComponent},
+  {path: 'candidate-info/:uuid', component: CandidateInfoComponent},
   {path: '**', component: PageNotFoundComponent}
 
 ]
