@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Candidate } from '../candidate-info/candidate';
+import { CandidateDataService } from '../candidate-info/candidate-data.service';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +9,28 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  public database$: Observable<any>;
+  constructor(
+    private candidateDataService: CandidateDataService
+  ) {}
 
-  constructor(private http: HttpClient) {
-
-  }
+  public candidates: Candidate[] = []
 
   ngOnInit() {
-    this.database$ = this.http.get("https://randomuser.me/api/?nat=br&seed=5165165165&results=10");
+    this.candidateDataService.getAllFromAll().subscribe((result) => {
+      this.candidates = result
+    })
+  }
+
+  moverParaLixeira(uuid: string) {
+    this.candidateDataService.moveFromAllToTrash(uuid)
+  }
+
+  moverParaAtendidos(uuid: string) {
+    this.candidateDataService.moveFromAllToChecked(uuid)
+  }
+
+  moveFromTrashToAll(uuid: string) {
+    this.candidateDataService.moveFromTrashToAll(uuid)
   }
 
 }
