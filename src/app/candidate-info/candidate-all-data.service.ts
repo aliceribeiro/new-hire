@@ -3,7 +3,7 @@ import { Candidate } from './candidate';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { BaseCandidatoDataService } from './base-candidate-data.service';
-import { CandidateTrashDataService } from './cadidate-trash-data.service';
+import { CandidateTrashDataService } from './candidate-trash-data.service';
 import { CandidateCheckedDataService } from './candidate-checked-data.service';
 
 @Injectable({
