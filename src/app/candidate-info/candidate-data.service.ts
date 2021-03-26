@@ -12,10 +12,18 @@ export class CandidateDataService {
     private candidateTrashDataService: CandidateTrashDataService,
     private candidateCheckedDataService: CandidateCheckedDataService,
     private candidateAllDataService: CandidateAllDataService
-  ) {}
+  ) {
+    if (!candidateAllDataService.hasCalledAPI()) {
+      this.candidateAllDataService.getAll()
+    }
+  }
 
   getAllFromAll() {
     return this.candidateAllDataService.getAll()
+  }
+
+  getByUUID(uuid: string) {
+    return this.getByUUIDFromAll(uuid)
   }
 
   getByUUIDFromAll(uuid: string) {
@@ -27,7 +35,7 @@ export class CandidateDataService {
   }
 
   getByUUIDFromChecked(uuid: string) {
-    return this.candidateTrashDataService.getByUUID(uuid)
+    return this.candidateCheckedDataService.getByUUID(uuid)
   }
 
   getAllFromTrash() {

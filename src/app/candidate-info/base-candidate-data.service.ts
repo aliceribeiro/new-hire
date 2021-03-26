@@ -1,5 +1,6 @@
 import { Candidate } from './candidate';
 import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class BaseCandidatoDataService {
 
@@ -18,7 +19,9 @@ export class BaseCandidatoDataService {
   }
 
   getByUUID(uuid: string) {
-    return this.candidatos.filter((candidato) => candidato.login.uuid === uuid)
+    return this.candidatosSource.pipe(
+      map(candidatos => candidatos.find(candidato => candidato.login.uuid === uuid))
+    )
   }
 
   protected moveTo(uuid: string, dataSource: BaseCandidatoDataService): boolean {

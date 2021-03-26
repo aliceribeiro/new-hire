@@ -10,21 +10,28 @@ import { CandidateCheckedDataService } from './candidate-checked-data.service';
   providedIn: 'root'
 })
 export class CandidateAllDataService extends BaseCandidatoDataService {
+  private calledApi = false;
+
   constructor(
     private http: HttpClient
   ) {
     super()
   }
 
+  hasCalledAPI () {
+    return this.calledApi;
+  }
+
   getAll() {
-    if(this.candidatos && this.candidatos.length) {
+    if(this.calledApi) {
       return this.candidatosSource;
     } else {
       this.http
-        .get("https://randomuser.me/api/?nat=br&seed=5165165165&results=10")
-        .pipe(
-          map((apiResult: { results: Candidate[] }) => apiResult.results)
+      .get("https://randomuser.me/api/?nat=br&seed=5165165165&results=10")
+      .pipe(
+        map((apiResult: { results: Candidate[] }) => apiResult.results)
         ).subscribe((candidatos) => {
+          this.calledApi = true
           this.candidatos = candidatos;
           this.candidatosSource.next(this.candidatos);
         });
