@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Candidate } from './candidate';
 import { CandidateDataService } from './candidate-data.service';
+import { format } from 'date-fns'
 
 @Component({
   selector: 'app-candidate-info',
@@ -64,7 +65,8 @@ export class CandidateInfoComponent implements OnInit {
   }
 
   onCalendarButton(candidate: Candidate) {
-    this.setTexts('My birthday is', candidate.dob.date)
+    const dateNormalized = format(new Date(candidate.dob.date), 'MM/dd/yyyy')
+    this.setTexts('My birthday is', dateNormalized)
   }
 
   onLocationButton(candidate: Candidate) {
