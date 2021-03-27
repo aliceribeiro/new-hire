@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { CheckedComponent } from './checked/checked.component';
 import { TrashComponent } from './trash/trash.component';
 import { CandidateInfoComponent } from './candidate-info/candidate-info.component';
-// import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CandidateInfoComponent } from './candidate-info/candidate-info.componen
     CheckedComponent,
     TrashComponent,
     CandidateInfoComponent,
-    // PageNotFoundComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
