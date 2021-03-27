@@ -1,27 +1,53 @@
-# NewHire
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+<h1 align="center"> 
+  New Hire
+</h1>
 
-## Development server
+<h1>
+  <img src="https://ik.imagekit.io/aliceribeiro/zup_1__GAnDpdGol.png">
+</h1>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h3 align="center">
+  <a href="https://new-hire.herokuapp.com/home">Acessar demonstração</a>
+</h3>
 
-## Code scaffolding
+# Indice
+- [Sobre](#-sobre)
+- [Tecnologias utilizadas](#-tecnologias-utilizadas)
+- [Como baixar o projeto](#-como-baixar-o-projeto)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📑 Sobre
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+O projeto **New Hire** trata-se de uma aplicação-teste desenvolvida para o processo seletivo da **Zup** para a vaga de dev front-end Angular. 
 
-## Running unit tests
+Possui o intuito de apresentar uma lista de candidatos em que o usuário poderá clicar em um específico e será apresentado uma nova tela com as suas informações. O usuário também poderá mover esse candidato para a lista de 'Atendidos' ou 'Lixeira'.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🚀 Tecnologias utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+O projeto foi desenvolvido utilizando as seguintes tecnologias
 
-## Further help
+- [Angular v11](https://angular.io/) 
+- [Node v12](https://nodejs.org/en/)
+- [Bootstrap v4](https://getbootstrap.com/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 📂 Como baixar o projeto
+
+```bash
+
+  $ git clone https://github.com/aliceribeiro/new-hire
+
+  $ cd rocketmusic
+
+  $ npm install
+
+  $ npm run dev
+```
+
+---
+Desenvolvido por Alice Ribeiro ✌🏼
