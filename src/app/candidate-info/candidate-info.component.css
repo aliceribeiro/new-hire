@@ -1,0 +1,14 @@
+.button-goup {
+  background-color: transparent;
+  border: none;
+  color: #ABABAB;
+  font-size: 2rem;
+}
+
+.button-goup:hover {
+  color: #B4C12C;
+}
+
+.button-goup:only-child {
+  color: #B4C12C;
+}
