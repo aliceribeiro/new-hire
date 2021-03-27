@@ -1,4 +1,9 @@
 
-nav i {
+nav a {
   color: #ABABAB;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #B4C12C;
 }
