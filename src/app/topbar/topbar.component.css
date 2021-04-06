@@ -1,0 +1,16 @@
+nav {
+  background-color: #2C3E50;
+  height: 20%;
+}
+
+.search-bar-icon {
+  background-color: #FFF;
+  color: #B4C12C;
+  border: none;
+  border-radius: 50px 0 0 50px;
+}
+
+.search-bar {
+  border: none;
+  border-radius: 0 50px 50px 0;
+}
