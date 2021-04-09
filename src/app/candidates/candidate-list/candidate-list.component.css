@@ -1,0 +1,12 @@
+button {
+  background-color: transparent;
+}
+
+button i {
+  color: #ABABAB;
+  font-size: 1.2rem;
+}
+
+button i:hover {
+  color: #B4C12C;
+}
